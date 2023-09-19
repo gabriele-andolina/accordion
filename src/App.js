@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 const faqs = [
@@ -34,6 +35,8 @@ function Accordion({ data }) {
 }
 
 function AccordionItem({ number, title, text }) {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="item">
             <p className="number">{number < 9 ? `0${number + 1}` : number}</p>
